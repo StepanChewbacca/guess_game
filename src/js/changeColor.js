@@ -1,12 +1,3 @@
-function addClassTo(item, clas) {
-    item.classList.add(clas);
-}
-
-function removeClassTo(item, clas) {
-    item.classList.remove(clas);
-}
-
-
 function changeClassAdd(clas) {
     count.classList.add(clas);
     helpText.classList.add(clas)
