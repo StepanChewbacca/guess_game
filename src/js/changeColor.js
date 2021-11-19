@@ -20,36 +20,53 @@ function changeClassAdd(clas) {
 function changeClassDel(firstClas,secondClas) {
     count.classList.remove(firstClas, secondClas);
     helpText.classList.remove(firstClas, secondClas);
-    guessCount.classList.remove(firstClas, secondClas);
+    // guessCount.classList.remove(firstClas, secondClas);
 }
 
-    function green() {
-       changeClassAdd('well');
-       changeClassDel("normal","hard")
-    }
-    
-    function yellow() {
-       changeClassDel("well","hard")
-       changeClassAdd('normal');
-    }
+function green() {
+    changeClassAdd('well');
+    changeClassDel("normal","hard")
+}
 
-    function red() {
-        changeClassDel("well", "normal")
-        changeClassAdd(helpText, 'hard');
-    }
+function yellow() {
+    changeClassAdd('normal');
+    changeClassDel("well","hard")
+}
 
-    function changeColor() {
-        switch (true) {
-           case (parseInt(count.innerText) >= numberOfAttempts):
-              green();
-              break;
-     
-           case (parseInt(count.innerText) > 2) && (parseInt(count.innerText)) <= (Math.ceil(numberOfAttempts * 0.7)) && (parseInt(count.innerText)) >= (Math.ceil(numberOfAttempts * 0.41)):
-              yellow();
-              break;
-     
-           case (parseInt(count.innerText) === 1 || (parseInt(count.innerText)) <= (Math.ceil(numberOfAttempts * 0.4))):
-              red();
-              break;
-        }
-     }
+function red() {
+    changeClassDel("well", "normal")
+    changeClassAdd( 'hard');
+}
+
+function changeColor() {
+    switch (true) {
+        case (parseInt(count.innerText) >= numberOfAttempts):
+            green();
+            break;
+
+        case (parseInt(count.innerText) >= 2)
+        && (parseInt(count.innerText)) <= (Math.ceil(numberOfAttempts * 0.6)) &&
+        (parseInt(count.innerText)) >= (Math.ceil(Math.ceil(numberOfAttempts / 3))):
+            yellow();
+            break;
+
+        case (parseInt(count.innerText) === 1 || (parseInt(count.innerText)) <= (Math.ceil(numberOfAttempts / 3))):
+            red();
+            break;
+    }
+}
+
+
+let kostil = 0
+function changeStylesheet(qualifiedName){
+    if ( kostil %2 === 0){
+        document.getElementById('stylesheet').setAttribute('href', "styleTheme.css");
+        kostil++
+        console.log(kalil)
+    } else {
+        window.location.reload()
+    }
+}
+
+
+

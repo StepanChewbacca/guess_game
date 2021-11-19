@@ -1,12 +1,6 @@
 // Выводит подсказку в зависимости от того больше загаданное число или меньше
 function displayHelpText() {
-   if (enableHints) {
-      if (+input.value > randomNumber) {
-         helpText.innerText = 'The hidden number is less than this!'
-      } else {
-         helpText.innerText = 'The hidden number is bigger than this!'
-      }
-   }
+   helpText.innerText = `The hidden number is ${+input.value > randomNumber ? 'less' : 'bigger'} than this!`
 }
 
 // Функция для генерирования рандомного числа
@@ -29,24 +23,25 @@ function tryNumber() {
 
 // Вызывается при победе
 function ifWin() {
-   alert('You Win!')
    setTimeout(btnReset.click(), 300);
-   startCondition();
+   showMessageSuccess()
 }
 
 // Вызывается при поражении
 function ifLoose() {
-   alert('You lose!')
    setTimeout(btnReset.click(), 300);
-   startCondition();
+   showMessageError()
 }
 
 // Описает какие будут присвоения на первой странице после заполения полей и нажатия на кнопку
 function setOptions() {
    minNumber = Math.round(Math.abs(+document.querySelector('.minNumber').value));
    maxNumber = Math.round(Math.abs(+document.querySelector('.maxNumber').value));
-   randomNumber = generateRandomNumber(minNumber, maxNumber);
    numberOfAttempts = Math.round(Math.abs(+document.querySelector('.attempts').value));
+   if ((minNumber === 0 && maxNumber === 0) || numberOfAttempts === 0) {
+      startCondition()
+   }
+   randomNumber = generateRandomNumber(minNumber, maxNumber);
    backText.innerText = `What number between (${minNumber} - ${maxNumber})`;
    count.textContent = numberOfAttempts;
 }
@@ -70,16 +65,7 @@ function clickFrontBack() {
    }
 
    // Возвращает страницу в изначальное состояние(перезагружает)
-   function startCondition() {
-      
-      input.value = '';
-      document.querySelector('.minNumber').value = '';
-      document.querySelector('.maxNumber').value = '';
-      document.querySelector('.attempts').value = '';
-      document.querySelector('.back__user-number').textContent = '';
-      usedNumbers.length = 0;
-      green();
-   };
+
 
    btnReset.addEventListener("click", (e) => {
       e.preventDefault();
@@ -87,16 +73,21 @@ function clickFrontBack() {
       addClassTo(back, 'hide');
       removeClassTo(front, 'hide');
       removeClassTo(back, 'show');
-      
+
       setTimeout(startCondition, 1000);
    });
 }
+function startCondition() {
+   input.value = '';
+   document.querySelector('.minNumber').value = '';
+   document.querySelector('.maxNumber').value = '';
+   document.querySelector('.attempts').value = '';
+   document.querySelector('.back__user-number').textContent = '';
+   usedNumbers.length = 0;
+   green();
+};
 
 function clickGuess() {
-   if (!btnGuess) {
-      return;
-   }
-
    btnGuess.addEventListener("click", (e) => {
       e.preventDefault();
       changeColor();
@@ -105,7 +96,8 @@ function clickGuess() {
 clickGuess();
 
 function decreaseGuess(number) {
-   if ((parseInt(number.innerText)) > 0) {
-      --number.innerText;
+   const num = parseInt(number.innerText);
+   if (num > 0) {
+      number.innerText = num - 1;
    }
 }

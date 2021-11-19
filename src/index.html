@@ -6,22 +6,22 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./css/recet.css">
-   <link rel="stylesheet" href="./css/sstyle.css">
+   <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/styleTheme.css" id="stylesheet">
+<!--   <link rel="stylesheet" href="./css/styleMedia.css" id="stylesheet">-->
    <title>Document</title>
 </head>
 
 <body>
    <div class="wrapper">
-      <!-- <header class="header">
-         <div class="header__container _container">
-            <div class="header__inner">
-            </div>
-         </div>
-      </header> -->
       <main class="main">
          <div class="main__container _container">
             <div class="generate">
                <div class="generate__front front">
+                  <label class="switch">
+                     <input class="checkbox" type="checkbox">
+                     <span class="slider round"></span>
+                  </label>
                   <div class="front__inner">
                      <h1 class="front__title">Go play</h1>
                      <input type="number" class="text-field__input minNumber" placeholder="Min value" required>
@@ -40,14 +40,14 @@
                               )</span>
                            <input name="user-choose" class="input" type="number">
                         </div>
-                        <div class="back__row">
-                           <span class="back__text">Guess Count <span
-                                 class="count well">7</span></span>
+                        <div class="back__row back__row_guess-count">
+                           <span class="back__text">Guess Count <span class="count well">7</span></span>
                         </div>
                         <div class="back__row">
                            <button class="btn btn-guess">Guess</button>
                         </div>
-                        <div class="back__user-number">There will be numbers that you have already used, do not repeat them!</div>
+                        <div class="back__user-number">There will be numbers that you have already used, do not repeat
+                           them!</div>
                         <footer class="footer">
                            <div class="help-text show well">You will succeed</div>
                            <button class="btn btn_reset">Reset</button>
@@ -59,11 +59,41 @@
          </div>
       </main>
    </div>
+   <!-- Сообщение об успешном  -->
+   <template id="success">
+      <div class="success">
+         <p class="success__message">You win</p>
+      </div>
+   </template>
+   <!--    Сообщение об ошибке -->
+   <template id="error">
+      <div class="error">
+         <p class="error__message">You lose</p>
+      </div>
+   </template>
    <script src="./js/init.js"></script>
    <script src="./js/script.js"></script>
    <script src="./js/validation.js"></script>
    <script src="./js/changeColor.js"></script>
    <script src="./js/listeners.js"></script>
+   <script src="./js/popup.js"></script>
+
+
+   <!--<div id="mocha"></div>-->
+   <!--<div id="messages"></div>-->
+   <!--<div id="fixtures"></div>-->
+   <!--<script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>-->
+   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/2.2.2/faker.js"></script>-->
+   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/8.0.1/mocha.js"></script>-->
+   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/1.4.1/chai.js"></script>-->
+   <!--<script>mocha.setup('bdd')</script>-->
+   <!--<script src="test/test.spec.js"></script>-->
+   <!--<script src="./js/script.js"></script>-->
+   <!--<script>-->
+   <!--   mocha.run();-->
+   <!--</script>-->
+
+
 </body>
 
 </html>
