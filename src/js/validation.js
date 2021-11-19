@@ -1,8 +1,7 @@
 function userNumber() {
-    if (input.value > maxNumber || input.value < minNumber || input.value === '' ) {
-        alert(`Not valid number, try to put number ${minNumber} - ${maxNumber}`)
+    if (input.value > maxNumber || input.value < minNumber || input.value === '') {
         input.value = ''
-        console.log(count.textContent)
+        showMessageErrorInput()
     } else {
         input.value = ''
     }
@@ -13,6 +12,5 @@ function getUsedNumbers() {
         usedNumbers.push(input.value);
         document.querySelector('.back__user-number').innerHTML = usedNumbers;
         decreaseGuess(count);
-        console.log(usedNumbers);
     }
-}    
+}

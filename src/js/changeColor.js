@@ -17,7 +17,7 @@ function changeClassAdd(clas) {
     }
 }
 
-function changeClassDel(firstClas,secondClas) {
+function changeClassDel(firstClas, secondClas) {
     count.classList.remove(firstClas, secondClas);
     helpText.classList.remove(firstClas, secondClas);
     // guessCount.classList.remove(firstClas, secondClas);
@@ -25,17 +25,17 @@ function changeClassDel(firstClas,secondClas) {
 
 function green() {
     changeClassAdd('well');
-    changeClassDel("normal","hard")
+    changeClassDel("normal", "hard")
 }
 
 function yellow() {
     changeClassAdd('normal');
-    changeClassDel("well","hard")
+    changeClassDel("well", "hard")
 }
 
 function red() {
     changeClassDel("well", "normal")
-    changeClassAdd( 'hard');
+    changeClassAdd('hard');
 }
 
 function changeColor() {
@@ -45,8 +45,8 @@ function changeColor() {
             break;
 
         case (parseInt(count.innerText) >= 2)
-        && (parseInt(count.innerText)) <= (Math.ceil(numberOfAttempts * 0.6)) &&
-        (parseInt(count.innerText)) >= (Math.ceil(Math.ceil(numberOfAttempts / 3))):
+            && (parseInt(count.innerText)) <= (Math.ceil(numberOfAttempts * 0.6)) &&
+            (parseInt(count.innerText)) >= (Math.ceil(Math.ceil(numberOfAttempts / 3))):
             yellow();
             break;
 
@@ -58,15 +58,13 @@ function changeColor() {
 
 
 let kostil = 0
-function changeStylesheet(qualifiedName){
-    if ( kostil %2 === 0){
+function changeStylesheet() {
+    if (kostil % 2 === 0) {
         document.getElementById('stylesheet').setAttribute('href', "styleTheme.css");
         kostil++
-        console.log(kalil)
     } else {
         window.location.reload()
     }
 }
-
 
 

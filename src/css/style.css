@@ -39,8 +39,6 @@ body {
    margin-bottom: 30px;
    text-align: center;
 }
-.back__inner {
-}
 .back__title {
    color: lightgreen;
    margin-bottom: 30px;
@@ -59,12 +57,6 @@ body {
 .back__row_guess-count {
    margin: 20px 0px 10px 0;
 }
-.back__text {
-}
-.min {
-}
-.max {
-}
 .input {
    width: 90px;
    padding: 3px 10px;
@@ -76,8 +68,6 @@ body {
 }
 .input:focus {
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-.guess-count {
 }
 .well {
    color: lightgreen;
@@ -204,7 +194,6 @@ body {
 .front__btn {
    margin-top: 20px;
    width: 160px;
-   height: 50px;
    background-repeat: 10px;
    font-size: 32px;
    color: #f10e0e;
@@ -212,7 +201,8 @@ body {
 }
 
 .success,
-.error {
+.error,
+.error-input {
    position: fixed;
    top: 0;
    left: 0;
@@ -253,7 +243,7 @@ body {
    width: 109px;
    height: 122px;
 
-   background-image: url("../img/muffin-white.svg");
+   /* background-image: url("../img/muffin-white.svg"); */
    background-position: center;
    background-repeat: no-repeat;
 
@@ -262,9 +252,9 @@ body {
    transform: translateX(-50%);
 }
 
-.error__message::before {
+/* .error__message::before {
    background-image: url("../img/muffin-red.svg");
-}
+} */
 
 .error__button {
    padding: 10px;
