@@ -1,15 +1,15 @@
 @font-face {
-   font-family: "Helloween";
-   src: url("../fonts/HalloweenToo.woff") format("woff");
+   font-family: "Snow";
+   src: url("../fonts/snowcapcyr.woff") format("woff");
    font-weight: normal;
    font-style: normal;
    font-display: swap;
 }
 body {
-   font-family: "Helloween";
+   font-family: "Snow";
    font-size: 14px;
    font-weight: 400;
-   color: #f10e0e;
+   color: #0d4200;
 }
 .wrapper {
    min-height: 100vh;
@@ -21,7 +21,7 @@ body {
    margin: 0 auto;
 }
 .main {
-   background: url("../img/111.jpg") center / cover no-repeat;
+   background: url("../img/theme2/bgmain.jpeg") center / cover no-repeat;
    min-height: 100vh;
    display: flex;
    flex-direction: column;
@@ -42,7 +42,7 @@ body {
 .back__inner {
 }
 .back__title {
-   color: lightgreen;
+   color: #0d4200;
    margin-bottom: 30px;
    font-size: 43px;
    text-shadow: 1px 1px black;
@@ -98,7 +98,7 @@ body {
    padding: 10px 30px;
    background-color: #f0f0f0;
    font-size: 32px;
-   color: #f10e0e;
+   color: #0d4200;
    background-color: rgba(243, 243, 239, 0.726);
    border-radius: 10%;
 }
@@ -114,7 +114,6 @@ body {
 }
 .help-text {
    opacity: 0;
-   margin-bottom: 20px;
 }
 .help-text.show {
    opacity: 1;
@@ -149,8 +148,9 @@ body {
    justify-content: center;
 }
 .front {
-   background: url("../img/card-bg1.jpg") 0 0 / cover no-repeat;
+   /*background: url("../img/grinch2.png") 0 0 / cover no-repeat;*/
    transform: rotateY(0deg);
+   background-color: rgba(98, 97, 97, 0.58);
 }
 .front__inner {
    padding-top: 30px;
@@ -163,8 +163,9 @@ body {
 .generate__back {
 }
 .back {
-   background: url("../img/card-bg2.jpg") 0 0 / cover no-repeat;
+   /*background: url("../img/grinch2.png") 0 0 / cover no-repeat;*/
    transform: rotateY(180deg);
+   background-color: rgba(98, 97, 97, 0.58);
 }
 .back__inner {
    padding: 20px;
@@ -180,6 +181,7 @@ body {
 }
 .show {
    transform: rotateY(360deg);
+   margin-bottom: 30px;
 }
 
 .text-field__input {
@@ -198,7 +200,7 @@ body {
 .front__title {
    font-size: 48px;
    margin-bottom: 30px;
-   color: #f10e0e;
+   color: #0d4200;
 }
 
 .front__btn {
@@ -207,7 +209,7 @@ body {
    height: 50px;
    background-repeat: 10px;
    font-size: 32px;
-   color: #f10e0e;
+   color: #0d4200;
    background-color: rgba(243, 243, 239, 0.726);
 }
 
@@ -293,4 +295,65 @@ body {
 .error__button:active {
    outline: none;
    opacity: 0.6;
+}
+
+/* The switch - the box around the slider */
+.switch {
+   position: relative;
+   display: inline-block;
+   width: 60px;
+   height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+   display: none;
+}
+
+/* The slider */
+.slider {
+   position: absolute;
+   cursor: pointer;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: #3df321;
+   -webkit-transition: 0.4s;
+   transition: 0.4s;
+}
+
+.slider:before {
+   position: absolute;
+   content: "";
+   height: 26px;
+   width: 26px;
+   left: 4px;
+   bottom: 4px;
+   background-color: white;
+   -webkit-transition: 0.4s;
+   transition: 0.4s;
+}
+
+input:checked + .slider {
+   background-color: #d94204;
+}
+
+input:focus + .slider {
+   box-shadow: 0 0 1px #3df321;
+}
+
+input:checked + .slider:before {
+   -webkit-transform: translateX(26px);
+   -ms-transform: translateX(26px);
+   transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+   border-radius: 34px;
+}
+
+.slider.round:before {
+   border-radius: 50%;
 }
